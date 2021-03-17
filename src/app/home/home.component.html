@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <div id="navside">
+            <img src="../../assets/logo.png" class="logo">
+            <img src="../../assets/mini-logo.png" class="mini-logo">
+            <div class="nav-menu">
+                <ul>
+                    <li>
+                        <i class="fas fa-ticket-alt"></i>
+                        <span class="nav-menu">All Ticket</span>
+                    </li>
+                    <li>
+                        <i class="far fa-newspaper"></i>
+                        <span class="nav-menu">My Ticket</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div id="navtop">
+            <div class="menu-hamburger"></div>
+            <a (click)="showModal()">Hi Ikhsan <i id="arrow" class="fas fa-sort-down"></i></a>
+        </div>
+        <div id="modal">
+            <span>Role: <strong>Bussiness Owner</strong></span>
+            <button (click)="logout()">Logout</button>
+        </div>
+        <div class="link-card">
+            <h2>Dashboard > All Ticket</h2>
+        </div>
+        <div class="row">
+            <div class="float-left">
+                <div id="dropdown">
+                    <select id="filter">
+                        <option class="dropdown-option" value="0">filter by </option>
+                        <option class="dropdown-option" value="1">Ticket Name</option>
+                        <option class="dropdown-option" value="2">Reporter</option>
+                        <option class="dropdown-option" value="3">Create Date</option>
+                        <option class="dropdown-option" value="4">Status</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-field" placeholder="input ticket number">
+                    <a class="search-button">Search</a>
+                </div>
+                <button class="clear-button">Clear Filter</button>
+            </div>
+            <div class="float-right">
+                <div class="new">
+                    <i class="far fa-plus-square"></i>New Ticket
+                </div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticket ID</th>
+                    <th>Ticket Name</th>
+                    <th>Reporter</th>
+                    <th>Create Date</th>
+                    <th>Status</th>
+                    <th>Activity</th>
+                    <th>Product Stream</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dataInq of data let i=index">
+                    <td>{{dataInq.ticketId}}</td>
+                    <td>{{dataInq.ticketName}}</td>
+                    <td>{{dataInq.reporter}}</td>
+                    <td>{{dataInq.createDate}}</td>
+                    <td>
+                        <div id="circle"></div>
+                    </td>
+                    <td>{{dataInq.activity}}</td>
+                    <td>{{dataInq.productStream}}</td>
+                    <td> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
